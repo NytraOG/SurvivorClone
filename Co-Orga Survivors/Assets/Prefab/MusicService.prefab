@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8579661657506655810}
   - component: {fileID: 1111856494582793713}
   m_Layer: 0
-  m_Name: SceneService
+  m_Name: MusicService
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -30,7 +30,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1111856494582793713
 MonoBehaviour:
@@ -44,3 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6d75430ef738984d91b1887ce8a3384, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  trackToStart: 
+  trackToStop: 
+  "men\xFCTrackPrefab": {fileID: 4270517286092121819, guid: fb7c5e52d7c39ad4c9dd4eea64d70b63, type: 3}
+  battleTrackPrefab: {fileID: 6664733055654213890, guid: 6cb51c584bff36f45b1247bcdb39e0ed, type: 3}

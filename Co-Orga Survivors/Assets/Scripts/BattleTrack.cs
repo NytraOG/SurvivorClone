@@ -1,13 +1,11 @@
 using UnityEngine;
 
-public class MenüTrack : MonoBehaviour
+public class BattleTrack : MonoBehaviour
 {
     public AudioSource audioSource;
-
     private void Awake()
     {
         audioSource = GetComponent<AudioSource>();
-
         DontDestroyOnLoad(transform.gameObject);
     }
 
