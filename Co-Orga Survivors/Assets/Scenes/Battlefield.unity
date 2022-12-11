@@ -260,7 +260,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   survivor: {fileID: 11400000, guid: 014c735ac1121a54bb9ea393646f937b, type: 2}
-  moveSpeed: 5
+  moveSpeed: 3
 --- !u!212 &338066247
 SpriteRenderer:
   m_ObjectHideFlags: 0
