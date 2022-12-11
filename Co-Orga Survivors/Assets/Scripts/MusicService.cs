@@ -10,9 +10,9 @@ public class MusicService : MonoBehaviour
 
     private void Start()
     {
-        InstantiateAudioSources();
-        PlayMusic();
-        StopMusic();
+        // InstantiateAudioSources();
+        // PlayMusic();
+        // StopMusic();
     }
 
     private void PlayMusic()

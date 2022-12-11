@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Player : BaseUnit
 {
+    public  GameObject   weapon;
     public  BaseSurvivor survivor;
     private float        currentExp;
     private float        expNeededForLevelup;
@@ -18,8 +19,18 @@ public class Player : BaseUnit
         spriteRenderer.sprite = survivor.sprite;
     }
 
+    private const float weaponCooldown   = .76f;
+    private       float nextWeaponAttack = weaponCooldown;
     private void Update()
     {
+        nextWeaponAttack -= Time.deltaTime;
+
+        if (nextWeaponAttack <= 0)
+        {
+            ThrowBarebell();
+            nextWeaponAttack = weaponCooldown;
+        }
+        
         var rigidBodyComponent = GetComponent<Rigidbody2D>();
 
         if ((Input.GetKey(KeyCode.D) && Input.GetKey(KeyCode.W)) || (Input.GetKey(KeyCode.RightArrow) && Input.GetKey(KeyCode.UpArrow)))
@@ -38,6 +49,11 @@ public class Player : BaseUnit
             rigidBodyComponent.transform.position = transform.position += Vector3.up * moveSpeed * Time.deltaTime;
         else if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow))
             rigidBodyComponent.transform.position = transform.position += Vector3.down * moveSpeed * Time.deltaTime;
+    }
+
+    private void ThrowBarebell()
+    {
+        var barebell = Instantiate(weapon,this.transform.position, Quaternion.identity, GameObject.FindGameObjectWithTag("Canvas").transform);
     }
 
     private void OnCollisionEnter2D(Collision2D col) => Debug.Log($"Collision with {col.gameObject.name}");
