@@ -2,13 +2,16 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class Langhantel : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
     {
-        
+        var audios     = this.GetComponents<AudioSource>();
+        var soundIndex = Random.Range(0, audios.Length);
+        audios[soundIndex].Play();
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

@@ -10,7 +10,7 @@ public class BattleService : MonoBehaviour
     private void Start()
     {
         //Instantiate(playerPrefab);
-        var sexyGirl =Instantiate(sexyGymGirlPrefab, new Vector3(0,0,-1), Quaternion.identity, GameObject.FindGameObjectWithTag("Canvas").transform);
+        var sexyGirl =Instantiate(sexyGymGirlPrefab, new Vector3(-4,0,-1), Quaternion.identity, GameObject.FindGameObjectWithTag("Canvas").transform);
         sexyGirl.name = "SexyGymGirl";
         // sexyGirl.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, false);
     }

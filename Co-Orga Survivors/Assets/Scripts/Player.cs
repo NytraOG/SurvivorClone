@@ -1,6 +1,7 @@
 using System;
 using ScriptableObjects;
 using UnityEngine;
+using Random = System.Random;
 
 public class Player : BaseUnit
 {
@@ -19,7 +20,7 @@ public class Player : BaseUnit
         spriteRenderer.sprite = survivor.sprite;
     }
 
-    private const float weaponCooldown   = .76f;
+    private const float weaponCooldown   = 1.12f;
     private       float nextWeaponAttack = weaponCooldown;
     private void Update()
     {
@@ -53,7 +54,8 @@ public class Player : BaseUnit
 
     private void ThrowBarebell()
     {
-        var barebell = Instantiate(weapon,this.transform.position, Quaternion.identity, GameObject.FindGameObjectWithTag("Canvas").transform);
+        var barebell   = Instantiate(weapon,this.transform.position, Quaternion.identity, GameObject.FindGameObjectWithTag("Canvas").transform);
+    
     }
 
     private void OnCollisionEnter2D(Collision2D col) => Debug.Log($"Collision with {col.gameObject.name}");
