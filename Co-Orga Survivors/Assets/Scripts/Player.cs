@@ -2,14 +2,18 @@ using System;
 using ScriptableObjects;
 using UnityEngine;
 
-public class Player : MonoBehaviour
+public class Player : BaseUnit
 {
     public  BaseSurvivor survivor;
-    public  float        moveSpeed;
-    private float        AxisSpeed => (float)Math.Sqrt(Math.Pow(moveSpeed, 2)/2);
+    private float        currentExp;
+    private float        expNeededForLevelup;
+    private float        AxisSpeed => (float)Math.Sqrt(Math.Pow(moveSpeed, 2) / 2);
 
     private void Start()
     {
+        currentExp          = 0;
+        expNeededForLevelup = level * 10;
+
         var spriteRenderer = GetComponent<SpriteRenderer>();
         spriteRenderer.sprite = survivor.sprite;
     }
