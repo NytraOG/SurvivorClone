@@ -1259,6 +1259,7 @@ MonoBehaviour:
   currentLife: 10
   moveSpeed: 4.5
   expGrantedOnDeath: 0
+  critChance: 13
   weapon: {fileID: 735739889161818992, guid: f4a7ceb255d2f8446aa7870b20bb3ffb, type: 3}
   survivor: {fileID: 11400000, guid: 014c735ac1121a54bb9ea393646f937b, type: 2}
 --- !u!50 &2078398309

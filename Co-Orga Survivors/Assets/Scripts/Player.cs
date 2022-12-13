@@ -20,8 +20,9 @@ public class Player : BaseUnit
         spriteRenderer.sprite = survivor.sprite;
     }
 
-    private const float weaponCooldown   = 1.12f;
+    private const float weaponCooldown   = .38f;
     private       float nextWeaponAttack = weaponCooldown;
+    
     private void Update()
     {
         nextWeaponAttack -= Time.deltaTime;
@@ -54,8 +55,9 @@ public class Player : BaseUnit
 
     private void ThrowBarebell()
     {
-        var barebell   = Instantiate(weapon,this.transform.position, Quaternion.identity, GameObject.FindGameObjectWithTag("Canvas").transform);
-    
+        var barbellObject = Instantiate(weapon,this.transform.position, Quaternion.identity, GameObject.FindGameObjectWithTag("Canvas").transform);
+        var script = barbellObject.GetComponent<Langhantel>();
+        script.Player = this;
     }
 
     private void OnCollisionEnter2D(Collision2D col) => Debug.Log($"Collision with {col.gameObject.name}");

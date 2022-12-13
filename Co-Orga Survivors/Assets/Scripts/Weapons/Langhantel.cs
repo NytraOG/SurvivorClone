@@ -7,9 +7,11 @@ using Random = UnityEngine.Random;
 public class Langhantel : MonoBehaviour
 {
     // Start is called before the first frame update
-    public float dmgMin  = 1.12f;
-    public float dmgMax  = 2.33f;
+    public float  dmgMin     = 2.25f;
+    public float  dmgMax     = 4.25f;
+    public float  critFactor = 1.76f;
     
+    public Player Player { get; set; }
     void Start()
     {
         var audios     = this.GetComponents<AudioSource>();
@@ -20,8 +22,14 @@ public class Langhantel : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         // var enemy =  collision.gameObject. as BaseUnit;
-        var enemy = collision.gameObject.GetComponent<BaseUnit>();
-        var dmg   = Random.Range(dmgMin, dmgMax + 0.01f);
+        var enemy         = collision.gameObject.GetComponent<BaseUnit>();
+        var dmg           = Random.Range(dmgMin, dmgMax + 0.01f);
+        var critIndicator = Random.Range(0, 100);
+        var isCrit        = critIndicator <= Player.critChance;
+
+        if (isCrit)
+            dmg *= critFactor;
+        
         enemy.TakeDmg(dmg);
         Destroy(this.gameObject);
     }
