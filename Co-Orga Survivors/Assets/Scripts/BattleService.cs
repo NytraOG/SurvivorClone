@@ -15,7 +15,7 @@ public class BattleService : MonoBehaviour
     private float      middleY;
     private Player     player;
     private float      ticks;
-    private float      Elapsed => ticks % 60;
+    private float      ElapsedSeconds => ticks % 60;
 
     private void Start()
     {
@@ -28,16 +28,16 @@ public class BattleService : MonoBehaviour
 
     private void Update()
     {
-        if (!firstWaveWasSpawned && Elapsed >= timeToSpawnFirstWave)
-        {
+        if (!firstWaveWasSpawned && ElapsedSeconds >= timeToSpawnFirstWave)
             SpawnEnemies();
-        }
-        else if (Elapsed >= timeToSpawnConsecutiveWaves)
+        else if (ElapsedSeconds >= timeToSpawnConsecutiveWaves)
         {
             SpawnEnemies();
             ticks = 0;
         }
     }
+
+    private void FixedUpdate() => ticks += Time.deltaTime;
 
     private void SpawnEnemies()
     {
@@ -49,7 +49,8 @@ public class BattleService : MonoBehaviour
         for (var i = 0; i < amountOfEnemiesToSpawn - 1; i++)
         {
             //Einmal bestimmen, ob der gegner links, recht oder gemischt vom firstSpawn spawnt
-            var enemyPosition = GetEnemyPosition(Random.Range(1, 3), Random.Range(0.5f, 1.01f), firstSpawnpoint, GetVorzeichen());
+            var enemyPosition = GetEnemyPosition(Random.Range(1, 4), firstSpawnpoint);
+
             Instantiate(enemyNullreferenceExceptionPrefab, enemyPosition, Quaternion.identity);
         }
 
@@ -57,19 +58,15 @@ public class BattleService : MonoBehaviour
         ticks               = 0;
     }
 
-    private void FixedUpdate() => ticks += Time.deltaTime;
+    private static int GetVorzeichen() => Random.Range(0, 2) == 0 ? 1 : -1;
 
-    private static int GetVorzeichen()
-    {
-        var vorzeichen = Random.Range(0, 2) == 0 ? 1 : -1;
-        return vorzeichen;
-    }
+    private static float GetDistanceModifiert() => Random.Range(0.5f, 1.01f);
 
-    private Vector3 GetEnemyPosition(int spawnIndex, float distanceModifier, Vector3 originalPosition, int vorzeichen) => spawnIndex switch
+    private Vector3 GetEnemyPosition(int spawnIndex, Vector3 originalPosition) => spawnIndex switch
     {
-        1 => originalPosition + new Vector3(spawnDistanceBetweenEnemiesOfGroup * distanceModifier * vorzeichen, 0),
-        2 => originalPosition + new Vector3(0, spawnDistanceBetweenEnemiesOfGroup * distanceModifier * vorzeichen),
-        3 => originalPosition + new Vector3(spawnDistanceBetweenEnemiesOfGroup * 0.7f * distanceModifier * vorzeichen, spawnDistanceBetweenEnemiesOfGroup * 0.7f * distanceModifier * vorzeichen),
+        1 => originalPosition + new Vector3(spawnDistanceBetweenEnemiesOfGroup * GetDistanceModifiert() * GetVorzeichen(), 0),
+        2 => originalPosition + new Vector3(0, spawnDistanceBetweenEnemiesOfGroup * GetDistanceModifiert() * GetVorzeichen()),
+        3 => originalPosition + new Vector3(spawnDistanceBetweenEnemiesOfGroup * Random.Range(0.1f, 1f) * GetDistanceModifiert() * GetVorzeichen(), spawnDistanceBetweenEnemiesOfGroup * Random.Range(0.1f, 1f) * GetDistanceModifiert() * GetVorzeichen()),
         _ => throw new ArgumentException(nameof(spawnIndex))
     };
 }

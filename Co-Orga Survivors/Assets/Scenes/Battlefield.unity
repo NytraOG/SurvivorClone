@@ -261,7 +261,7 @@ MonoBehaviour:
   timeToSpawnConsecutiveWaves: 5
   amountOfEnemiesToSpawn: 9
   spawnSafetyRadius: 0
-  spawnDistanceBetweenEnemiesOfGroup: 1
+  spawnDistanceBetweenEnemiesOfGroup: 1.5
 --- !u!1 &586973679
 GameObject:
   m_ObjectHideFlags: 0
