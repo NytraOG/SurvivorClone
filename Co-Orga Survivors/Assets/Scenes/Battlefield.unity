@@ -256,8 +256,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dbf358fd23a898544943410ff30bd496, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerPrefab: {fileID: 5858682517830145391, guid: b23902895c17dc24d8c22cc977418d5c, type: 3}
   enemyNullreferenceExceptionPrefab: {fileID: 5911831431294561793, guid: 3d2fc901778d67045a47f22fe7d354a2, type: 3}
+  timeToSpawnFirstWave: 1
+  timeToSpawnConsecutiveWaves: 5
+  amountOfEnemiesToSpawn: 9
+  spawnSafetyRadius: 0
+  spawnDistanceBetweenEnemiesOfGroup: 1
 --- !u!1 &586973679
 GameObject:
   m_ObjectHideFlags: 0
