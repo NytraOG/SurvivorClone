@@ -128,5 +128,5 @@ MonoBehaviour:
   level: 1
   maxLife: 5
   currentLife: 5
-  moveSpeed: 15
-  expGrantedOnDeath: 2
+  moveSpeed: 20
+  expGrantedOnDeath: 1

@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class Player : BaseUnit
 {
-    public  BaseSurvivor survivor;
-    private float        currentExp;
-    private float        expNeededForLevelup;
-    private float        AxisSpeed => (float)Math.Sqrt(Math.Pow(moveSpeed, 2) / 2);
+    public  Survivor survivor;
+    private float    currentExp;
+    private float    expNeededForLevelup;
+    private float    AxisSpeed => (float)Math.Sqrt(Math.Pow(moveSpeed, 2) / 2);
 
     private void Start()
     {

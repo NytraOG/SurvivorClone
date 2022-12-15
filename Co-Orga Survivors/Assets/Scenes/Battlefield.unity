@@ -259,7 +259,7 @@ MonoBehaviour:
   enemyNullreferenceExceptionPrefab: {fileID: 5911831431294561793, guid: 3d2fc901778d67045a47f22fe7d354a2, type: 3}
   timeToSpawnFirstWave: 1
   timeToSpawnConsecutiveWaves: 5
-  amountOfEnemiesToSpawn: 9
+  amountOfEnemiesToSpawn: 20
   spawnSafetyRadius: 0
   spawnDistanceBetweenEnemiesOfGroup: 1.5
 --- !u!1 &586973679
