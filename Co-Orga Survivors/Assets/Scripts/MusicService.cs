@@ -9,10 +9,10 @@ public class MusicService : MonoBehaviour
     public GameObject battleTrackPrefab;
 
     private void Start()
-    {
-        // InstantiateAudioSources();
-        // PlayMusic();
-        // StopMusic();
+    { 
+        InstantiateAudioSources();
+        PlayMusic(); 
+        StopMusic();
     }
 
     private void PlayMusic()
