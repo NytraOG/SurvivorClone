@@ -11,7 +11,8 @@ public class BattleTrack : MonoBehaviour
 
     public void PlayMusic()
     {
-        if (audioSource.isPlaying) return;
+        if (audioSource.isPlaying) 
+            return;
 
         audioSource.Play();
     }

@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application PreferredLanguage="de">
+  <NavigationItems>
+    <Items>
+      <Item Id="Default">
+        <Items>
+          <Item Id="THE GAME" Caption="THE GAME" ImageName="" ViewId="CoOrgaSurvivorsGame_Container" IsNewNode="True" />
+        </Items>
+      </Item>
+    </Items>
+  </NavigationItems>
+  <SchemaModules>
+    <SchemaModule Name="SystemModule" Version="22.1.4.0" IsNewNode="True" />
+  </SchemaModules>
+  <Views DefaultListEditor="DevExpress.ExpressApp.Blazor.Editors.DxGridListEditor">
+    <DashboardView Id="CoOrgaSurvivorsGame_Container" Caption="CoOrgaSurvivorsGame_Container" IsNewNode="True">
+      <Items IsNewNode="True">
+        <ControlDetailItem Id="Game" ControlTypeName="The_GUI.Blazor.Server.CoOrgaSurvivorsGameAdapter" Caption="Game" IsNewNode="True" />
+      </Items>
+    </DashboardView>
+  </Views>
+</Application>

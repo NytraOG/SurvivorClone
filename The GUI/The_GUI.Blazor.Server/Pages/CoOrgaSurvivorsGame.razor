@@ -1,0 +1,34 @@
+﻿@inject IJSRuntime JS
+
+<div id="unity-container" class="unity-desktop">
+    <canvas id="unity-canvas" width=960 height=600 tabindex="-1"></canvas>
+    <div id="unity-loading-bar">
+        <div id="unity-logo"></div>
+        <div id="unity-progress-bar-empty">
+            <div id="unity-progress-bar-full"></div>
+        </div>
+    </div>
+    <div id="unity-warning"> </div>
+    <div id="unity-footer">
+        <div id="unity-webgl-logo"></div>
+        <div id="unity-fullscreen-button"></div>
+        <div id="unity-build-title">Co-Orga Survivors</div>
+    </div>
+</div>
+
+
+@*<script src="~/Pages/CoOrgaSurvivorsGame.razor.js"></script>*@
+
+@code {
+    [ParameterAttribute]
+    public string Title
+    {
+        get;
+        set;
+    }
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        var module = await JS.InvokeAsync<IJSObjectReference>("import", "./Pages/CoOrgaSurvivorsGame.razor.js");
+    }
+}

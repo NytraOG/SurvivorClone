@@ -4,48 +4,69 @@ using Random = UnityEngine.Random;
 
 public class BattleService : MonoBehaviour
 {
-    private static readonly object     GymGirlCountLocker = new object();
-    private                 int        maxGymGirls        = 10;
-    private                 int        gymGirls           = 0;
-    public                  GameObject playerPrefab;
-    public                  GameObject enemyNullreferenceExceptionPrefab;
-    public                  GameObject sexyGymGirlPrefab;
-    
-    // Start is called before the first frame update
+    public  GameObject enemyNullreferenceExceptionPrefab;
+    public  float      timeToSpawnFirstWave;
+    public  float      timeToSpawnConsecutiveWaves;
+    public  int        amountOfEnemiesToSpawn;
+    public  int        spawnSafetyRadius;
+    public  float      spawnDistanceBetweenEnemiesOfGroup;
+    private bool       firstWaveWasSpawned;
+    private float      middleX;
+    private float      middleY;
+    private Player     player;
+    private float      ticks;
+    private float      ElapsedSeconds => ticks % 60;
+
     private void Start()
     {
-        for (var i = 0; i < maxGymGirls; i++)
+        player = GameObject.Find(nameof(Player))?.GetComponent<Player>();
+        var playerposition = player.transform.position;
+
+        middleX = Math.Abs(playerposition.x);
+        middleY = Math.Abs(playerposition.y);
+    }
+
+    private void Update()
+    {
+        if (!firstWaveWasSpawned && ElapsedSeconds >= timeToSpawnFirstWave)
+            SpawnEnemies();
+        else if (ElapsedSeconds >= timeToSpawnConsecutiveWaves)
         {
-            MakeGymGirl();
-        }   
-        //Instantiate(playerPrefab);
-        // sexyGirl.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, false);
+            SpawnEnemies();
+            ticks = 0;
+        }
     }
 
-    private void OnDied(object sender, EventArgs e)
+    private void FixedUpdate() => ticks += Time.deltaTime; 
+
+    private void SpawnEnemies()
     {
-        ((BaseUnit)sender).Died -= OnDied;
+        var distanceModifier = Random.Range(1f, 2f);
+        var firstSpawnpoint  = new Vector3(middleX * 1 * GetVorzeichen(), middleY * 1 * GetVorzeichen(), 0);
 
-        lock (GymGirlCountLocker)
-            gymGirls--;
+        Instantiate(enemyNullreferenceExceptionPrefab, firstSpawnpoint, Quaternion.identity, GameObject.FindGameObjectWithTag("Canvas").transform);
+
+        for (var i = 0; i < amountOfEnemiesToSpawn - 1; i++) 
+        {
+            //Einmal bestimmen, ob der gegner links, recht oder gemischt vom firstSpawn spawnt
+            var enemyPosition = GetEnemyPosition(Random.Range(1, 4), firstSpawnpoint);
+
+            Instantiate(enemyNullreferenceExceptionPrefab, enemyPosition, Quaternion.identity, GameObject.FindGameObjectWithTag("Canvas").transform);
+        }
+
+        firstWaveWasSpawned = true;
+        ticks               = 0;
     }
 
-    // Update is called once per frame
-    private void Update() 
+    private static int GetVorzeichen() => Random.Range(0, 2) == 0 ? 1 : 1;
+
+    private static float GetDistanceModifiert() => Random.Range(0.5f, 1.01f);
+
+    private Vector3 GetEnemyPosition(int spawnIndex, Vector3 originalPosition) => spawnIndex switch
     {
-        for(var i = gymGirls; i < maxGymGirls; i++)
-            MakeGymGirl();
-    }
-    
-    private void MakeGymGirl(){
-        
-        var randomX  = Random.Range(-4.0f, 3.01f);
-        var randomy  = Random.Range(-2.0f, 2.01f);
-        var sexyGirl = Instantiate(sexyGymGirlPrefab, new Vector3(randomX, randomy, -1), Quaternion.identity, GameObject.FindGameObjectWithTag("Canvas").transform);
-        sexyGirl.name                          =  "SexyGymGirl";
-        sexyGirl.GetComponent<BaseUnit>().Died += OnDied;
-
-        lock (GymGirlCountLocker)
-            gymGirls++;
-    }
+        1 => originalPosition + new Vector3(spawnDistanceBetweenEnemiesOfGroup * GetDistanceModifiert() * GetVorzeichen(), 0),
+        2 => originalPosition + new Vector3(0, spawnDistanceBetweenEnemiesOfGroup * GetDistanceModifiert() * GetVorzeichen()),
+        3 => originalPosition + new Vector3(spawnDistanceBetweenEnemiesOfGroup * Random.Range(0.1f, 1f) * GetDistanceModifiert() * GetVorzeichen(), spawnDistanceBetweenEnemiesOfGroup * Random.Range(0.1f, 1f) * GetDistanceModifiert() * GetVorzeichen()),
+        _ => throw new ArgumentException(nameof(spawnIndex))
+    };
 }

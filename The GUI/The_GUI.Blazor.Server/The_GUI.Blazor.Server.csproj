@@ -1,0 +1,88 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Deterministic>false</Deterministic>
+    <AssemblyVersion>1.0.*</AssemblyVersion>
+    <FileVersion>1.0.0.0</FileVersion>
+    <Configurations>Debug;Release;EasyTest</Configurations>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Remove="Model.xafml" />
+    <None Remove="Model_de.xafml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Model.xafml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Model_de.xafml">
+      <DependentUpon>Model.xafml</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="DevExpress.Blazor.de" Version="22.1.4" />
+    <PackageReference Include="DevExpress.ExpressApp.AspNetCore.de" Version="22.1.4" />
+    <PackageReference Include="DevExpress.ExpressApp.Blazor" Version="22.1.4" />
+    <PackageReference Include="DevExpress.ExpressApp.Blazor.All.de" Version="22.1.4" />
+    <PackageReference Include="DevExpress.ExpressApp.CodeAnalysis" Version="22.1.4" />
+    <PackageReference Include="DevExpress.ExpressApp.Security.Xpo" Version="22.1.4" />
+    <PackageReference Include="DevExpress.ExpressApp.Validation.Blazor" Version="22.1.4" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\The_GUI.Module\The_GUI.Module.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Update="wwwroot\Build\Co-Orga Survivors.data">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\Build\Co-Orga Survivors.framework.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\Build\Co-Orga Survivors.loader.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\Build\Co-Orga Survivors.wasm">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\StreamingAssets\UnityServicesProjectConfiguration.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\TemplateData\favicon.ico">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\TemplateData\fullscreen-button.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\TemplateData\MemoryProfiler.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\TemplateData\progress-bar-empty-dark.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\TemplateData\progress-bar-empty-light.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\TemplateData\progress-bar-full-dark.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\TemplateData\progress-bar-full-light.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\TemplateData\style.css">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\TemplateData\unity-logo-dark.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\TemplateData\unity-logo-light.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\TemplateData\webgl-logo.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\TemplateData\webmemd-icon.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+</Project>
