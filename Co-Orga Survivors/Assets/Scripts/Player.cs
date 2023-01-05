@@ -1,14 +1,15 @@
 using System;
+using CoOrga.Survivors.Domain;
 using ScriptableObjects;
 using UnityEngine;
 
-public class Player : BaseUnit
+public class Player : BaseUnit 
 {
     public  Survivor survivor;
     private float    currentExp;
     private float    expNeededForLevelup;
     private float    AxisSpeed => (float)Math.Sqrt(Math.Pow(moveSpeed, 2) / 2);
-
+ 
     private void Start()
     {
         currentExp          = 0;
@@ -16,6 +17,8 @@ public class Player : BaseUnit
 
         var spriteRenderer = GetComponent<SpriteRenderer>();
         spriteRenderer.sprite = survivor.sprite;
+        
+        var bauer = new Bauer();
     }
 
     private void Update()

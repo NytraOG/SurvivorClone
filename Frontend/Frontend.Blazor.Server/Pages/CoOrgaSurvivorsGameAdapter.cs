@@ -2,9 +2,8 @@
 using DevExpress.ExpressApp.Blazor.Editors.Adapters;
 using DevExpress.ExpressApp.Editors;
 using Microsoft.AspNetCore.Components;
-using The_GUI.Blazor.Server.Pages;
 
-namespace The_GUI.Blazor.Server;
+namespace CoOrga.Survivors.Frontend.Blazor.Server.Pages;
 
 public class CoOrgaSurvivorsGameAdapter : IComponentAdapter, IComplexControl
 {

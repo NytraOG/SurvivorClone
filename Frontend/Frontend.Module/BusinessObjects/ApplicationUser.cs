@@ -1,11 +1,10 @@
 ﻿using System.ComponentModel;
-using System.Text;
 using DevExpress.ExpressApp;
 using DevExpress.ExpressApp.Security;
 using DevExpress.Persistent.BaseImpl.PermissionPolicy;
 using DevExpress.Xpo;
 
-namespace The_GUI.Module.BusinessObjects;
+namespace CoOrga.Survivors.Frontend.Module.BusinessObjects;
 
 [MapInheritance(MapInheritanceType.ParentTable)]
 [DefaultProperty(nameof(UserName))]

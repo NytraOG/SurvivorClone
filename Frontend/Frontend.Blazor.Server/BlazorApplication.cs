@@ -1,13 +1,7 @@
 ﻿using DevExpress.ExpressApp;
-using DevExpress.ExpressApp.ApplicationBuilder;
 using DevExpress.ExpressApp.Blazor;
-using DevExpress.ExpressApp.Security;
-using DevExpress.ExpressApp.Security.ClientServer;
-using DevExpress.ExpressApp.SystemModule;
-using DevExpress.ExpressApp.Xpo;
-using The_GUI.Blazor.Server.Services;
 
-namespace The_GUI.Blazor.Server;
+namespace CoOrga.Survivors.Frontend.Blazor.Server;
 
 public class The_GUIBlazorApplication : BlazorApplication {
     public The_GUIBlazorApplication() {

@@ -1,4 +1,7 @@
-﻿using DevExpress.ExpressApp.ApplicationBuilder;
+﻿using CoOrga.Survivors.Frontend.Blazor.Server.Services;
+using CoOrga.Survivors.Frontend.Module;
+using CoOrga.Survivors.Frontend.Module.BusinessObjects;
+using DevExpress.ExpressApp.ApplicationBuilder;
 using DevExpress.ExpressApp.Blazor.ApplicationBuilder;
 using DevExpress.ExpressApp.Blazor.Services;
 using DevExpress.ExpressApp.Security;
@@ -10,11 +13,8 @@ using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Components.Server.Circuits;
 using Microsoft.AspNetCore.SignalR;
 using Microsoft.AspNetCore.StaticFiles;
-using The_GUI.Blazor.Server.Services;
-using The_GUI.Module;
-using The_GUI.Module.BusinessObjects;
 
-namespace The_GUI.Blazor.Server;
+namespace CoOrga.Survivors.Frontend.Blazor.Server;
 
 public class Startup
 {

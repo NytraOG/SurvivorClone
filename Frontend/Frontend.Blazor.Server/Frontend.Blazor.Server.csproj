@@ -6,6 +6,8 @@
     <FileVersion>1.0.0.0</FileVersion>
     <Configurations>Debug;Release;EasyTest</Configurations>
     <ImplicitUsings>enable</ImplicitUsings>
+    <AssemblyName>CoOrga.Survivors.Frontend.Blazor.Server</AssemblyName>
+    <RootNamespace>CoOrga.Survivors.Frontend.Blazor.Server</RootNamespace>
   </PropertyGroup>
   <ItemGroup>
     <Content Remove="wwwroot\index.html" />
@@ -37,7 +39,7 @@
     <PackageReference Include="ElectronNET.API" Version="13.5.1" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\The_GUI.Module\The_GUI.Module.csproj" />
+    <ProjectReference Include="..\Frontend.Module\Frontend.Module.csproj" />
   </ItemGroup>
   <ItemGroup>
     <Content Update="wwwroot\Build\Co-Orga Survivors.data">

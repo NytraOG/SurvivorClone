@@ -3,7 +3,7 @@ using DevExpress.ExpressApp.Security;
 using DevExpress.Persistent.BaseImpl;
 using DevExpress.Xpo;
 
-namespace The_GUI.Module.BusinessObjects;
+namespace CoOrga.Survivors.Frontend.Module.BusinessObjects;
 
 [DeferredDeletion(false)]
 [Persistent("PermissionPolicyUserLoginInfo")]

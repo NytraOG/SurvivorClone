@@ -5,7 +5,7 @@ using DevExpress.ExpressApp.Design;
 using DevExpress.ExpressApp.Utils;
 using ElectronNET.API;
 
-namespace The_GUI.Blazor.Server;
+namespace CoOrga.Survivors.Frontend.Blazor.Server;
 
 public class Program : IDesignTimeApplicationFactory
 {
