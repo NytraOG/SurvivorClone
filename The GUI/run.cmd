@@ -1,0 +1,1 @@
+dotnet electronize start "\The_GUI.Blazor.Server\The_GUI.Blazor.Server.csproj" /PublishSingleFile false /PublishReadyToRun false

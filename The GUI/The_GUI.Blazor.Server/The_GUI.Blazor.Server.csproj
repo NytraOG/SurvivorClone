@@ -34,6 +34,7 @@
     <PackageReference Include="DevExpress.ExpressApp.CodeAnalysis" Version="22.1.4" />
     <PackageReference Include="DevExpress.ExpressApp.Security.Xpo" Version="22.1.4" />
     <PackageReference Include="DevExpress.ExpressApp.Validation.Blazor" Version="22.1.4" />
+    <PackageReference Include="ElectronNET.API" Version="13.5.1" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\The_GUI.Module\The_GUI.Module.csproj" />
@@ -88,6 +89,11 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Update="wwwroot\TemplateData\webmemd-icon.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Update="electron.manifest.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
