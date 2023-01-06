@@ -10,19 +10,29 @@
         <RootNamespace>CoOrga.Survivors.Domain</RootNamespace>
     </PropertyGroup>
     <ItemGroup>
-        <None Remove="Model.DesignedDiffs.xafml"/>
+        <None Remove="Model.DesignedDiffs.xafml" />
     </ItemGroup>
     <ItemGroup>
-        <EmbeddedResource Include="Model.DesignedDiffs.xafml"/>
+        <EmbeddedResource Include="Model.DesignedDiffs.xafml" />
+        <None Remove="Images\alex.png" />
+        <EmbeddedResource Include="Images\alex.png" />
+        <None Remove="Images\björn.png" />
+        <EmbeddedResource Include="Images\björn.png" />
+        <None Remove="Images\christian.png" />
+        <EmbeddedResource Include="Images\christian.png" />
+        <None Remove="Images\jens.png" />
+        <EmbeddedResource Include="Images\jens.png" />
+        <None Remove="Images\tobias.png" />
+        <EmbeddedResource Include="Images\tobias.png" />
     </ItemGroup>
     <ItemGroup>
-        <PackageReference Include="DevExpress.ExpressApp" Version="22.1.4"/>
-        <PackageReference Include="DevExpress.ExpressApp.CodeAnalysis" Version="22.1.4"/>
-        <PackageReference Include="DevExpress.ExpressApp.Xpo" Version="22.1.4"/>
-        <PackageReference Include="DevExpress.Persistent.Base" Version="22.1.4"/>
-        <PackageReference Include="DevExpress.Persistent.BaseImpl.Xpo" Version="22.1.4"/>
+        <PackageReference Include="DevExpress.ExpressApp" Version="22.1.4" />
+        <PackageReference Include="DevExpress.ExpressApp.CodeAnalysis" Version="22.1.4" />
+        <PackageReference Include="DevExpress.ExpressApp.Xpo" Version="22.1.4" />
+        <PackageReference Include="DevExpress.Persistent.Base" Version="22.1.4" />
+        <PackageReference Include="DevExpress.Persistent.BaseImpl.Xpo" Version="22.1.4" />
     </ItemGroup>
     <Target Name="PostBuild" AfterTargets="PostBuildEvent">
-        <Exec Command="copy /Y &quot;$(TargetDir)$(AssemblyName).dll&quot; &quot;$(SolutionDir)..\Co-Orga Survivors\Assets\Libraries\$(AssemblyName).dll&quot;"/>
+        <Exec Command="copy /Y &quot;$(TargetDir)$(AssemblyName).dll&quot; &quot;$(SolutionDir)..\Co-Orga Survivors\Assets\Libraries\$(AssemblyName).dll&quot;" />
     </Target>
 </Project>
