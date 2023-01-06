@@ -8,24 +8,26 @@ namespace CoOrga.Survivors.Frontend.Module.BusinessObjects;
 
 [MapInheritance(MapInheritanceType.ParentTable)]
 [DefaultProperty(nameof(UserName))]
-public class ApplicationUser : PermissionPolicyUser, IObjectSpaceLink, ISecurityUserWithLoginInfo {
+public class ApplicationUser : PermissionPolicyUser, IObjectSpaceLink, ISecurityUserWithLoginInfo
+{
     public ApplicationUser(Session session) : base(session) { }
 
     [Browsable(false)]
-    [Aggregated, Association("User-LoginInfo")]
-    public XPCollection<ApplicationUserLoginInfo> LoginInfo {
-        get { return GetCollection<ApplicationUserLoginInfo>(nameof(LoginInfo)); }
-    }
-
-    IEnumerable<ISecurityUserLoginInfo> IOAuthSecurityUser.UserLogins => LoginInfo.OfType<ISecurityUserLoginInfo>();
+    [Aggregated]
+    [Association("User-LoginInfo")]
+    public XPCollection<ApplicationUserLoginInfo> LoginInfo => GetCollection<ApplicationUserLoginInfo>();
 
     IObjectSpace IObjectSpaceLink.ObjectSpace { get; set; }
 
-    ISecurityUserLoginInfo ISecurityUserWithLoginInfo.CreateUserLoginInfo(string loginProviderName, string providerUserKey) {
-        ApplicationUserLoginInfo result = ((IObjectSpaceLink)this).ObjectSpace.CreateObject<ApplicationUserLoginInfo>();
+    IEnumerable<ISecurityUserLoginInfo> IOAuthSecurityUser.UserLogins => LoginInfo.OfType<ISecurityUserLoginInfo>();
+
+    ISecurityUserLoginInfo ISecurityUserWithLoginInfo.CreateUserLoginInfo(string loginProviderName, string providerUserKey)
+    {
+        var result = ((IObjectSpaceLink)this).ObjectSpace.CreateObject<ApplicationUserLoginInfo>();
         result.LoginProviderName = loginProviderName;
-        result.ProviderUserKey = providerUserKey;
-        result.User = this;
+        result.ProviderUserKey   = providerUserKey;
+        result.User              = this;
+
         return result;
     }
 }

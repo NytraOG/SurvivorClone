@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Frontend.Module", "Frontend
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Frontend.Blazor.Server", "Frontend.Blazor.Server\Frontend.Blazor.Server.csproj", "{B9731679-BBE9-4988-AC3F-61726FFA2AF7}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain", "Domain\Domain.csproj", "{47D908EF-D93F-43A8-BB18-2D2DC80DFEEC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain2", "Domain2\Domain2.csproj", "{D7AE6D9B-E52D-4463-AFB2-711520484580}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -28,12 +28,12 @@ Global
 		{B9731679-BBE9-4988-AC3F-61726FFA2AF7}.EasyTest|Any CPU.Build.0 = EasyTest|Any CPU
 		{B9731679-BBE9-4988-AC3F-61726FFA2AF7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B9731679-BBE9-4988-AC3F-61726FFA2AF7}.Release|Any CPU.Build.0 = Release|Any CPU
-		{47D908EF-D93F-43A8-BB18-2D2DC80DFEEC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{47D908EF-D93F-43A8-BB18-2D2DC80DFEEC}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{47D908EF-D93F-43A8-BB18-2D2DC80DFEEC}.EasyTest|Any CPU.ActiveCfg = Debug|Any CPU
-		{47D908EF-D93F-43A8-BB18-2D2DC80DFEEC}.EasyTest|Any CPU.Build.0 = Debug|Any CPU
-		{47D908EF-D93F-43A8-BB18-2D2DC80DFEEC}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{47D908EF-D93F-43A8-BB18-2D2DC80DFEEC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D7AE6D9B-E52D-4463-AFB2-711520484580}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D7AE6D9B-E52D-4463-AFB2-711520484580}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D7AE6D9B-E52D-4463-AFB2-711520484580}.EasyTest|Any CPU.ActiveCfg = EasyTest|Any CPU
+		{D7AE6D9B-E52D-4463-AFB2-711520484580}.EasyTest|Any CPU.Build.0 = EasyTest|Any CPU
+		{D7AE6D9B-E52D-4463-AFB2-711520484580}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D7AE6D9B-E52D-4463-AFB2-711520484580}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

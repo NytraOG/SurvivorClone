@@ -9,30 +9,32 @@ public class CoOrgaSurvivorsGameAdapter : IComponentAdapter, IComplexControl
 {
     private XafApplication application;
     private RenderFragment component;
+
+    public void Refresh() { }
+
+    public void Setup(IObjectSpace objectSpace, XafApplication application) => this.application = application;
+
     public RenderFragment ComponentContent
     {
         get
         {
             if (component == null)
             {
-                component = builder => {
+                component = builder =>
+                {
                     builder.OpenComponent<CoOrgaSurvivorsGame>(0);
                     builder.AddAttribute(1, nameof(CoOrgaSurvivorsGame.Title), application.Title);
                     builder.CloseComponent();
                 };
             }
+
             return component;
         }
     }
-    public void Refresh() { }
-    public void Setup(IObjectSpace objectSpace, XafApplication application)
-    {
-        this.application = application;
-    }
-    public object GetValue()
-    {
-        return null;
-    }
-    public void               SetValue(object value) { }
+
+    public object GetValue() => null;
+
+    public void SetValue(object value) { }
+
     public event EventHandler ValueChanged;
 }

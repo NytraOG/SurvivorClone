@@ -6,8 +6,8 @@
         <FileVersion>1.0.0.0</FileVersion>
         <Configurations>Debug;Release;EasyTest</Configurations>
         <ImplicitUsings>enable</ImplicitUsings>
-        <AssemblyName>CoOrga.Survivors.Frontend.Module</AssemblyName>
-        <RootNamespace>CoOrga.Survivors.Frontend.Module</RootNamespace>
+        <AssemblyName>CoOrga.Survivors.Domain</AssemblyName>
+        <RootNamespace>CoOrga.Survivors.Domain</RootNamespace>
     </PropertyGroup>
     <ItemGroup>
         <None Remove="Model.DesignedDiffs.xafml"/>
@@ -17,14 +17,12 @@
     </ItemGroup>
     <ItemGroup>
         <PackageReference Include="DevExpress.ExpressApp" Version="22.1.4"/>
-        <PackageReference Include="DevExpress.ExpressApp.AuditTrail.Xpo" Version="22.1.4"/>
         <PackageReference Include="DevExpress.ExpressApp.CodeAnalysis" Version="22.1.4"/>
-        <PackageReference Include="DevExpress.ExpressApp.ConditionalAppearance" Version="22.1.4"/>
-        <PackageReference Include="DevExpress.ExpressApp.Objects" Version="22.1.4"/>
-        <PackageReference Include="DevExpress.ExpressApp.Security.Xpo" Version="22.1.4"/>
-        <PackageReference Include="DevExpress.ExpressApp.Validation" Version="22.1.4"/>
         <PackageReference Include="DevExpress.ExpressApp.Xpo" Version="22.1.4"/>
         <PackageReference Include="DevExpress.Persistent.Base" Version="22.1.4"/>
         <PackageReference Include="DevExpress.Persistent.BaseImpl.Xpo" Version="22.1.4"/>
     </ItemGroup>
+    <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+        <Exec Command="copy /Y &quot;$(TargetDir)$(AssemblyName).dll&quot; &quot;$(SolutionDir)..\Co-Orga Survivors\Assets\Libraries\$(AssemblyName).dll&quot;"/>
+    </Target>
 </Project>

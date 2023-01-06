@@ -1,6 +1,7 @@
-﻿<Router AppAssembly="@typeof(Program).Assembly" AdditionalAssemblies="new[] { typeof(DevExpress.ExpressApp.Blazor.BlazorApplication).Assembly }">
+﻿@using DevExpress.ExpressApp.Blazor
+<Router AppAssembly="@typeof(Program).Assembly" AdditionalAssemblies="new[] { typeof(BlazorApplication).Assembly }">
     <Found Context="routeData">
-        <RouteView RouteData="@routeData" />
+        <RouteView RouteData="@routeData"/>
     </Found>
     <NotFound>
         <LayoutView>

@@ -9,8 +9,8 @@ namespace CoOrga.Survivors.Frontend.Blazor.Server;
 
 public class Program : IDesignTimeApplicationFactory
 {
-    private static bool IsDesignTime = false;
-    
+    private static readonly bool IsDesignTime = false;
+
     XafApplication IDesignTimeApplicationFactory.Create()
     {
         var hostBuilder = CreateHostBuilder(Array.Empty<string>());
