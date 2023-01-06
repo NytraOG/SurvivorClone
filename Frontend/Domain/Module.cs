@@ -8,12 +8,9 @@ using Updater = CoOrga.Survivors.Domain.DatabaseUpdate.Updater;
 namespace CoOrga.Survivors.Domain;
 
 // For more typical usage scenarios, be sure to check out https://docs.devexpress.com/eXpressAppFramework/DevExpress.ExpressApp.ModuleBase.
-public sealed class Domain2Module : ModuleBase
+public sealed class DomainModule : ModuleBase
 {
-    public Domain2Module() =>
-            // 
-            // Domain2Module
-            // 
+    public DomainModule() =>
             RequiredModuleTypes.Add(typeof(SystemModule));
 
     public override IEnumerable<ModuleUpdater> GetModuleUpdaters(IObjectSpace objectSpace, Version versionFromDB)

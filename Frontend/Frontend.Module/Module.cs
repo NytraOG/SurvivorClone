@@ -1,4 +1,5 @@
-﻿using DevExpress.ExpressApp;
+﻿using CoOrga.Survivors.Domain;
+using DevExpress.ExpressApp;
 using DevExpress.ExpressApp.AuditTrail;
 using DevExpress.ExpressApp.ConditionalAppearance;
 using DevExpress.ExpressApp.DC;
@@ -14,13 +15,10 @@ using Updater = CoOrga.Survivors.Frontend.Module.DatabaseUpdate.Updater;
 namespace CoOrga.Survivors.Frontend.Module;
 
 // For more typical usage scenarios, be sure to check out https://docs.devexpress.com/eXpressAppFramework/DevExpress.ExpressApp.ModuleBase.
-public sealed class The_GUIModule : ModuleBase
+public sealed class FrontendModule : ModuleBase
 {
-    public The_GUIModule()
+    public FrontendModule()
     {
-        // 
-        // The_GUIModule
-        // 
         AdditionalExportedTypes.Add(typeof(ModelDifference));
         AdditionalExportedTypes.Add(typeof(ModelDifferenceAspect));
         AdditionalExportedTypes.Add(typeof(BaseObject));
@@ -32,6 +30,7 @@ public sealed class The_GUIModule : ModuleBase
         RequiredModuleTypes.Add(typeof(BusinessClassLibraryCustomizationModule));
         RequiredModuleTypes.Add(typeof(ConditionalAppearanceModule));
         RequiredModuleTypes.Add(typeof(ValidationModule));
+        RequiredModuleTypes.Add(typeof(DomainModule));
     }
 
     public override IEnumerable<ModuleUpdater> GetModuleUpdaters(IObjectSpace objectSpace, Version versionFromDB)

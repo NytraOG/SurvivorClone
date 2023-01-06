@@ -47,8 +47,8 @@ public class Startup
                     {
                         options.AllowValidationDetailsAccess = false;
                     })
-                   .Add<The_GUIModule>()
-                   .Add<The_GUIBlazorModule>();
+                   .Add<FrontendModule>()
+                   .Add<FrontendBlazorModule>();
 
             builder.ObjectSpaceProviders
                    .AddSecuredXpo((serviceProvider, options) =>

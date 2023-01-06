@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Frontend.Module", "Frontend
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Frontend.Blazor.Server", "Frontend.Blazor.Server\Frontend.Blazor.Server.csproj", "{B9731679-BBE9-4988-AC3F-61726FFA2AF7}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain2", "Domain2\Domain2.csproj", "{D7AE6D9B-E52D-4463-AFB2-711520484580}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain", "Domain\Domain.csproj", "{D7AE6D9B-E52D-4463-AFB2-711520484580}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
