@@ -9,9 +9,11 @@ public class Updater : ModuleUpdater
     public Updater(IObjectSpace objectSpace, Version currentDBVersion) :
             base(objectSpace, currentDBVersion) { }
 
-    public override void UpdateDatabaseAfterUpdateSchema() => base.UpdateDatabaseAfterUpdateSchema();
-
-    //string name = "MyName";
+    public override void UpdateDatabaseAfterUpdateSchema()
+    {
+        base.UpdateDatabaseAfterUpdateSchema();
+    }
+    
     //DomainObject1 theObject = ObjectSpace.FirstOrDefault<DomainObject1>(u => u.Name == name);
     //if(theObject == null) {
     //    theObject = ObjectSpace.CreateObject<DomainObject1>();

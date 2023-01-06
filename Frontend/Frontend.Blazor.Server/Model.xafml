@@ -1,10 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Application PreferredLanguage="de">
-  <NavigationItems>
+<Application PreferredLanguage="de" Title="Co-Orga Survivors">
+  <NavigationItems StartupNavigationItem="Spiel">
     <Items>
       <Item Id="Default">
         <Items>
-          <Item Id="THE GAME" Caption="THE GAME" ImageName="" ViewId="CoOrgaSurvivorsGame_Container" IsNewNode="True" />
+          <Item Id="THE GAME" Caption="THE GAME" ImageName="" ViewId="CoOrgaSurvivorsGame_Container" Index="-1" IsNewNode="True" />
+          <Item Id="Spiel" Caption="Spiel" ImageName="" ViewId="Charakterauswahl_Container" IsNewNode="True" />
         </Items>
       </Item>
     </Items>
@@ -13,10 +14,25 @@
     <SchemaModule Name="SystemModule" Version="22.1.4.0" IsNewNode="True" />
   </SchemaModules>
   <Views DefaultListEditor="DevExpress.ExpressApp.Blazor.Editors.DxGridListEditor">
+    <DashboardView Id="Charakterauswahl_Container" Caption="Karaktaauswaal" IsNewNode="True">
+      <Items IsNewNode="True">
+        <ControlDetailItem Id="Karaktaauswaal" ControlTypeName="CoOrga.Survivors.Frontend.Blazor.Server.Pages.CharakterauswahlAdapter" IsNewNode="True" />
+      </Items>
+      <Layout IsNewNode="True">
+        <LayoutGroup Id="Main" IsNewNode="True">
+          <LayoutItem Id="@8ff02ec4-a66a-41a3-876a-b7533f2d6712" ViewItem="Karaktaauswaal" Index="0" IsNewNode="True" />
+        </LayoutGroup>
+      </Layout>
+    </DashboardView>
     <DashboardView Id="CoOrgaSurvivorsGame_Container" Caption="CoOrgaSurvivorsGame_Container" IsNewNode="True">
       <Items IsNewNode="True">
-        <ControlDetailItem Id="Game" ControlTypeName="The_GUI.Blazor.Server.CoOrgaSurvivorsGameAdapter" Caption="Game" IsNewNode="True" />
+        <ControlDetailItem Id="Game" ControlTypeName="CoOrga.Survivors.Frontend.Blazor.Server.Pages.CoOrgaSurvivorsGameAdapter" Caption="Game" IsNewNode="True" />
       </Items>
+      <Layout IsNewNode="True">
+        <LayoutGroup Id="Main" IsNewNode="True">
+          <LayoutItem Id="Game" ViewItem="Game" Index="0" IsNewNode="True" />
+        </LayoutGroup>
+      </Layout>
     </DashboardView>
   </Views>
 </Application>

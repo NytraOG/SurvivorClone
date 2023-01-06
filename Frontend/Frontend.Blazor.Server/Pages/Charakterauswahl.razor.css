@@ -1,0 +1,10 @@
+﻿.charakter-card{
+    height:250px;
+    border: 1px dashed red;
+    margin-right: 10px;
+    float:left;
+}
+
+.charakter-card img {
+        max-height: 150px;
+    }

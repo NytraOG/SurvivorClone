@@ -1,0 +1,56 @@
+﻿@using DevExpress.ExpressApp
+<h1>Wähle deinen Mitarbeiter</h1>
+<style>
+    .charakter-card{
+        height:250px;
+        width:250px;
+        border: 1px dashed red;
+        margin-right: 15px;
+        display: inline-block;
+    }
+
+    .charakter-card img {
+        max-height: 200px;
+    }
+    .abteilung-card {
+        clear:both;
+        max-width: 1000px;
+        margin-bottom: 50px;
+    }
+</style>
+
+<div class="abteilung-card">
+    <h3>Development</h3>
+    <div class="charakter-card">
+        <img src="images/alex.png" />
+    </div>
+    <div class="charakter-card">
+        <img src="images/tl.png" />
+    </div>
+    <div class="charakter-card">
+        <img src="images/NytraSurvivorSprite.png"/>
+    </div>
+</div>
+<div class="abteilung-card">
+    <h3>Infrastruktur</h3>
+    <div class="charakter-card">
+        <img src="images/jens.png"/>
+    </div>
+</div>
+<div class="abteilung-card">
+    <h3>Bosse</h3>
+    <div class="charakter-card">
+        <img src="images/björn.png"/>
+    </div>
+</div>
+
+@code {
+
+    [Parameter]
+    public IObjectSpace ObjectSpace { get; set; }
+
+    protected override Task OnAfterRenderAsync(bool firstRender)
+    {
+        return base.OnAfterRenderAsync(firstRender);
+    }
+}

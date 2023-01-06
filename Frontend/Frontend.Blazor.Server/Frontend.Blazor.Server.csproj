@@ -10,11 +10,11 @@
         <RootNamespace>CoOrga.Survivors.Frontend.Blazor.Server</RootNamespace>
     </PropertyGroup>
     <ItemGroup>
-        <Content Remove="wwwroot\index.html"/>
+        <Content Remove="wwwroot\index.html" />
     </ItemGroup>
     <ItemGroup>
-        <None Remove="Model.xafml"/>
-        <None Remove="Model_de.xafml"/>
+        <None Remove="Model.xafml" />
+        <None Remove="Model_de.xafml" />
     </ItemGroup>
     <ItemGroup>
         <Content Include="Model.xafml">
@@ -26,20 +26,20 @@
         </Content>
     </ItemGroup>
     <ItemGroup>
-        <None Include="wwwroot\index.html"/>
+        <None Include="wwwroot\index.html" />
     </ItemGroup>
     <ItemGroup>
-        <PackageReference Include="DevExpress.Blazor.de" Version="22.1.4"/>
-        <PackageReference Include="DevExpress.ExpressApp.AspNetCore.de" Version="22.1.4"/>
-        <PackageReference Include="DevExpress.ExpressApp.Blazor" Version="22.1.4"/>
-        <PackageReference Include="DevExpress.ExpressApp.Blazor.All.de" Version="22.1.4"/>
-        <PackageReference Include="DevExpress.ExpressApp.CodeAnalysis" Version="22.1.4"/>
-        <PackageReference Include="DevExpress.ExpressApp.Security.Xpo" Version="22.1.4"/>
-        <PackageReference Include="DevExpress.ExpressApp.Validation.Blazor" Version="22.1.4"/>
-        <PackageReference Include="ElectronNET.API" Version="13.5.1"/>
+        <PackageReference Include="DevExpress.Blazor.de" Version="22.1.4" />
+        <PackageReference Include="DevExpress.ExpressApp.AspNetCore.de" Version="22.1.4" />
+        <PackageReference Include="DevExpress.ExpressApp.Blazor" Version="22.1.4" />
+        <PackageReference Include="DevExpress.ExpressApp.Blazor.All.de" Version="22.1.4" />
+        <PackageReference Include="DevExpress.ExpressApp.CodeAnalysis" Version="22.1.4" />
+        <PackageReference Include="DevExpress.ExpressApp.Security.Xpo" Version="22.1.4" />
+        <PackageReference Include="DevExpress.ExpressApp.Validation.Blazor" Version="22.1.4" />
+        <PackageReference Include="ElectronNET.API" Version="13.5.1" />
     </ItemGroup>
     <ItemGroup>
-        <ProjectReference Include="..\Frontend.Module\Frontend.Module.csproj"/>
+        <ProjectReference Include="..\Frontend.Module\Frontend.Module.csproj" />
     </ItemGroup>
     <ItemGroup>
         <Content Update="wwwroot\Build\Co-Orga Survivors.data">
