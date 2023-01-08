@@ -1,0 +1,34 @@
+﻿@using CoOrga.Survivors.Domain.BusinessObjects
+@using DevExpress.XtraRichEdit.Commands
+<div class="charakter-card @characterSelected" onclick="@OnCardClicked">
+    <img src="@Charakter.ImgUrl"/>
+</div>
+
+@code {
+    private string characterSelected = string.Empty;
+    private string selectedClass = "character-selected";
+    
+    public bool IsSelected => !string.IsNullOrWhiteSpace(characterSelected);
+    
+    [Parameter]
+    public Charakter Charakter { get; set; }
+
+    [Parameter]
+    public EventCallback<CharakterCard> OnClickCallback { get; set; }
+
+    private async Task OnCardClicked()
+    {
+        ToggleSelectedClass();
+        await OnClickCallback.InvokeAsync(this);
+    }
+
+    public void ToggleSelectedClass()
+    {
+        characterSelected = string.IsNullOrWhiteSpace(characterSelected) ? selectedClass : string.Empty;
+    }
+    
+    public void RemoveSelectedClass()
+    {
+        characterSelected = string.Empty;
+    }
+}

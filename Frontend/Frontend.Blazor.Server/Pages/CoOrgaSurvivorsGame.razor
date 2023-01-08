@@ -16,17 +16,12 @@
     </div>
 </div>
 
-
-@*<script src="~/Pages/CoOrgaSurvivorsGame.razor.js"></script>*@
-
 @code {
-
-    [ParameterAttribute]
+    [Parameter]
     public string Title { get; set; }
 
     protected override async Task OnAfterRenderAsync(bool firstRender)
     {
         var module = await JS.InvokeAsync<IJSObjectReference>("import", "./Pages/CoOrgaSurvivorsGame.razor.js");
     }
-
 }

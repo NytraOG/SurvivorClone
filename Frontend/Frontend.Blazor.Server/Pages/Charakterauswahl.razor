@@ -1,59 +1,73 @@
-﻿@using DevExpress.ExpressApp
+﻿@using DevExpress.Xpo
+@using DevExpress.ExpressApp
 @using CoOrga.Survivors.Domain.BusinessObjects
-@using DevExpress.Xpo
 <h1>Wähle deinen Mitarbeiter</h1>
-<style>
-    .charakter-card:hover{
-        cursor: pointer;
-        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    }
+<DxButton Enabled="@cards.Any(c => c.IsSelected)"
+          Text="Spiel starten"
+          Click="OnSpielStartenClicked">
+</DxButton>
 
-    .charakter-card{
-        height:250px;
-        width:250px;
-        border: 1px dashed red;
-        margin-right: 15px;
-        display: inline-block;
-    }
-
-    .charakter-card img {
-        max-height: 200px;
-        display:block;
-    }
-    .abteilung-card {
-        max-width: 1000px;
-        margin-bottom: 50px;
-    }
-</style>
 @if (CharaktereProAbteilung != null)
 {
     @foreach (var abteilung in CharaktereProAbteilung)
     {
-        <div class="abteilung-card">
+        <div class="abteilung-card ">
             <h3>@abteilung.Key</h3>
             @foreach (var charakter in abteilung.OrderBy(c => c.SortIndex))
             {
-                <div class="charakter-card">
-                    <img src="@charakter.ImgUrl"/>
-                </div>    
+                <CharakterCard @ref="Card" Charakter="charakter" OnClickCallback="OnCharacterClicked"/>
             }
-        </div>    
+        </div>
     }
 }
 
 @code {
 
+    [Inject]
+    public NavigationManager NavigationManager { get; set; }
+
     [Parameter]
     public IObjectSpace ObjectSpace { get; set; }
 
-    private List<IGrouping<string,Charakter>> CharaktereProAbteilung { get; set; }
+    private IGrouping<string, Charakter>[] CharaktereProAbteilung { get; set; }
+    private readonly List<CharakterCard> cards = new();
+
+    public CharakterCard Card
+    {
+        set
+        {
+            if (!cards.Contains(value))
+                cards.Add(value);
+        }
+    }
 
     protected override async Task OnInitializedAsync()
     {
         CharaktereProAbteilung = await ObjectSpace.GetObjectsQuery<Charakter>()
-                                      .GroupBy(c => c.Abteilung)
-                                      .ToListAsync();
-        
+                                                  .GroupBy(c => c.Abteilung)
+                                                  .ToArrayAsync();
+
         await base.OnInitializedAsync();
+    }
+
+    private void OnCharacterClicked(CharakterCard selected)
+    {
+        foreach (var card   in cards)
+        {
+            if (ReferenceEquals(card, selected))
+                continue;
+
+            card.RemoveSelectedClass();
+        }
+    }
+
+    private void OnSpielStartenClicked()
+    {
+        var selectedCharakter = cards.First(c => c.IsSelected)
+                                     .Charakter;
+        var neuesSpiel = ObjectSpace.CreateObject<Spiel>();
+        neuesSpiel.AusgewählterChar = selectedCharakter;
+        ObjectSpace.CommitChanges();
+        NavigationManager.NavigateTo("/CoOrgaSurvivorsGame_Container");
     }
 }

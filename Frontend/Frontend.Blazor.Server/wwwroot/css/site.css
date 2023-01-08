@@ -29,3 +29,30 @@ app {
     height: 100%;
     z-index: 100001;
 }
+
+.charakter-card:hover {
+    cursor: pointer;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.charakter-card {
+    height: 250px;
+    width: 250px;
+    border: 1px dashed red;
+    margin-right: 15px;
+    display: inline-block;
+}
+
+.charakter-card img {
+    max-height: 200px;
+    display: block;
+}
+
+.abteilung-card {
+    max-width: 1000px;
+    margin-bottom: 50px;
+}
+
+.character-selected {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}

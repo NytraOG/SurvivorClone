@@ -4,8 +4,11 @@
     <Items>
       <Item Id="Default">
         <Items>
-          <Item Id="THE GAME" Caption="THE GAME" ImageName="" ViewId="CoOrgaSurvivorsGame_Container" Index="-1" IsNewNode="True" />
-          <Item Id="Spiel" Caption="Spiel" ImageName="" ViewId="Charakterauswahl_Container" IsNewNode="True" />
+          <Item Id="Spiel" Caption="Spiel" ImageName="" ViewId="Charakterauswahl_Container" IsNewNode="True">
+            <Items IsNewNode="True">
+              <Item Id="Neues Spiel" ImageName="" ViewId="CoOrgaSurvivorsGame_Container" Index="-1" Caption="Neues Spiel" IsNewNode="True" />
+            </Items>
+          </Item>
         </Items>
       </Item>
     </Items>
