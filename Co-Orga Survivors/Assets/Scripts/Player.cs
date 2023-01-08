@@ -1,4 +1,5 @@
 using System;
+using CoOrga.Survivors.Domain.BusinessObjects;
 using ScriptableObjects;
 using UnityEngine;
 
@@ -16,6 +17,9 @@ public class Player : BaseUnit
 
         var spriteRenderer = GetComponent<SpriteRenderer>();
         spriteRenderer.sprite = survivor.sprite;
+
+        Charakter x         = null;
+        
     }
 
     private void Update()
