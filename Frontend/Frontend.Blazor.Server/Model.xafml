@@ -40,11 +40,11 @@
         <ActionLink ActionId="Refresh" IsNewNode="True" />
       </HiddenActions>
       <Items IsNewNode="True">
-        <ControlDetailItem Id="Game" ControlTypeName="CoOrga.Survivors.Frontend.Blazor.Server.Pages.CoOrgaSurvivorsGameAdapter" Caption="Game" IsNewNode="True" />
+        <ControlDetailItem Id="Game" ControlTypeName="CoOrga.Survivors.Frontend.Blazor.Server.Pages.CoOrgaSurvivorsGameAdapter" Caption=" Game" IsNewNode="True" />
       </Items>
       <Layout IsNewNode="True">
-        <LayoutGroup Id="Main" IsNewNode="True">
-          <LayoutItem Id="Game" ViewItem="Game" Index="0" IsNewNode="True" />
+        <LayoutGroup Id="Main" ShowCaption="False" Index="0" RelativeSize="100" IsNewNode="True">
+          <LayoutItem Id="Game" ViewItem="Game" Index="0" ShowCaption="False" RelativeSize="100" IsNewNode="True" />
         </LayoutGroup>
       </Layout>
     </DashboardView>
