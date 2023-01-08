@@ -1,5 +1,4 @@
 using System;
-using CoOrga.Survivors.Domain;
 using ScriptableObjects;
 using UnityEngine;
 
@@ -17,8 +16,6 @@ public class Player : BaseUnit
 
         var spriteRenderer = GetComponent<SpriteRenderer>();
         spriteRenderer.sprite = survivor.sprite;
-        
-        var bauer = new Bauer();
     }
 
     private void Update()

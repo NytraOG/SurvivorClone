@@ -40,8 +40,7 @@ var config = {
     companyName: "DefaultCompany",
     productName: "Co-Orga Survivors",
     productVersion: "1.0",
-    showBanner: unityShowBanner,
-    matchWebGLToCanvasSize: false
+    showBanner: unityShowBanner
 };
 
 // By default Unity keeps WebGL canvas render target size matched with
@@ -69,8 +68,8 @@ if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
 } else {
     // Desktop style: Render the game canvas in a window that can be maximized to fullscreen:
 
-    //canvas.style.width = "960px";
-    //canvas.style.height = "600px";
+    canvas.style.width = "960px";
+    canvas.style.height = "600px";
 }
 
 loadingBar.style.display = "block";
