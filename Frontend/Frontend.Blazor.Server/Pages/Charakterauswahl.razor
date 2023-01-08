@@ -26,6 +26,9 @@
     [Inject]
     public NavigationManager NavigationManager { get; set; }
 
+    [Inject]
+    public IJSRuntime JSRuntime { get; set; }
+
     [Parameter]
     public IObjectSpace ObjectSpace { get; set; }
 
@@ -61,13 +64,14 @@
         }
     }
 
-    private void OnSpielStartenClicked()
+    private async Task OnSpielStartenClicked()
     {
         var selectedCharakter = cards.First(c => c.IsSelected)
                                      .Charakter;
         var neuesSpiel = ObjectSpace.CreateObject<Spiel>();
         neuesSpiel.AusgewählterChar = selectedCharakter;
         ObjectSpace.CommitChanges();
+        await JSRuntime.InvokeVoidAsync("toggleSideBar");
         NavigationManager.NavigateTo("/CoOrgaSurvivorsGame_Container");
     }
 }

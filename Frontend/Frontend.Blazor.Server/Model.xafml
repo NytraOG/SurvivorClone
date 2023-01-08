@@ -2,13 +2,16 @@
 <Application PreferredLanguage="de" Title="Co-Orga Survivors">
   <NavigationItems StartupNavigationItem="Spiel">
     <Items>
-      <Item Id="Default">
+      <Item Id="Default" Removed="True">
         <Items>
-          <Item Id="Spiel" Caption="Spiel" ImageName="" ViewId="Charakterauswahl_Container" IsNewNode="True">
-            <Items IsNewNode="True">
-              <Item Id="Neues Spiel" ImageName="" ViewId="CoOrgaSurvivorsGame_Container" Index="-1" Caption="Neues Spiel" IsNewNode="True" />
-            </Items>
-          </Item>
+          <Item Id="ApplicationUser_ListView" Removed="True" />
+          <Item Id="MyDetails" Removed="True" />
+          <Item Id="PermissionPolicyRole_ListView" Removed="True" />
+        </Items>
+      </Item>
+      <Item Id="Spiel" ImageName="" ViewId="Charakterauswahl_Container" Caption="Spiel" IsNewNode="True">
+        <Items IsNewNode="True">
+          <Item Id="Neues Spiel" ImageName="" ViewId="CoOrgaSurvivorsGame_Container" Index="-1" Caption="Neues Spiel" IsNewNode="True" />
         </Items>
       </Item>
     </Items>
@@ -18,6 +21,10 @@
   </SchemaModules>
   <Views DefaultListEditor="DevExpress.ExpressApp.Blazor.Editors.DxGridListEditor">
     <DashboardView Id="Charakterauswahl_Container" Caption="Karaktaauswaal" IsNewNode="True">
+      <HiddenActions IsNewNode="True">
+        <ActionLink ActionId="OrganizeDashboard" IsNewNode="True" />
+        <ActionLink ActionId="Refresh" IsNewNode="True" />
+      </HiddenActions>
       <Items IsNewNode="True">
         <ControlDetailItem Id="Karaktaauswaal" ControlTypeName="CoOrga.Survivors.Frontend.Blazor.Server.Pages.CharakterauswahlAdapter" IsNewNode="True" />
       </Items>
@@ -28,6 +35,10 @@
       </Layout>
     </DashboardView>
     <DashboardView Id="CoOrgaSurvivorsGame_Container" Caption="CoOrgaSurvivorsGame_Container" IsNewNode="True">
+      <HiddenActions IsNewNode="True">
+        <ActionLink ActionId="OrganizeDashboard" IsNewNode="True" />
+        <ActionLink ActionId="Refresh" IsNewNode="True" />
+      </HiddenActions>
       <Items IsNewNode="True">
         <ControlDetailItem Id="Game" ControlTypeName="CoOrga.Survivors.Frontend.Blazor.Server.Pages.CoOrgaSurvivorsGameAdapter" Caption="Game" IsNewNode="True" />
       </Items>

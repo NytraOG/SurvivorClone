@@ -10,24 +10,27 @@
         <RootNamespace>CoOrga.Survivors.Frontend.Module</RootNamespace>
     </PropertyGroup>
     <ItemGroup>
-        <None Remove="Model.DesignedDiffs.xafml"/>
+        <None Remove="Model.DesignedDiffs.xafml" />
     </ItemGroup>
     <ItemGroup>
-        <EmbeddedResource Include="Model.DesignedDiffs.xafml"/>
+        <EmbeddedResource Include="Model.DesignedDiffs.xafml" />
     </ItemGroup>
     <ItemGroup>
-        <PackageReference Include="DevExpress.ExpressApp" Version="22.1.4"/>
-        <PackageReference Include="DevExpress.ExpressApp.AuditTrail.Xpo" Version="22.1.4"/>
-        <PackageReference Include="DevExpress.ExpressApp.CodeAnalysis" Version="22.1.4"/>
-        <PackageReference Include="DevExpress.ExpressApp.ConditionalAppearance" Version="22.1.4"/>
-        <PackageReference Include="DevExpress.ExpressApp.Objects" Version="22.1.4"/>
-        <PackageReference Include="DevExpress.ExpressApp.Security.Xpo" Version="22.1.4"/>
-        <PackageReference Include="DevExpress.ExpressApp.Validation" Version="22.1.4"/>
-        <PackageReference Include="DevExpress.ExpressApp.Xpo" Version="22.1.4"/>
-        <PackageReference Include="DevExpress.Persistent.Base" Version="22.1.4"/>
-        <PackageReference Include="DevExpress.Persistent.BaseImpl.Xpo" Version="22.1.4"/>
+        <PackageReference Include="DevExpress.ExpressApp" Version="22.1.4" />
+        <PackageReference Include="DevExpress.ExpressApp.AuditTrail.Xpo" Version="22.1.4" />
+        <PackageReference Include="DevExpress.ExpressApp.CodeAnalysis" Version="22.1.4" />
+        <PackageReference Include="DevExpress.ExpressApp.ConditionalAppearance" Version="22.1.4" />
+        <PackageReference Include="DevExpress.ExpressApp.Objects" Version="22.1.4" />
+        <PackageReference Include="DevExpress.ExpressApp.Security.Xpo" Version="22.1.4" />
+        <PackageReference Include="DevExpress.ExpressApp.Validation" Version="22.1.4" />
+        <PackageReference Include="DevExpress.ExpressApp.Xpo" Version="22.1.4" />
+        <PackageReference Include="DevExpress.Persistent.Base" Version="22.1.4" />
+        <PackageReference Include="DevExpress.Persistent.BaseImpl.Xpo" Version="22.1.4" />
     </ItemGroup>
     <ItemGroup>
-        <ProjectReference Include="..\Domain\Domain.csproj"/>
+        <ProjectReference Include="..\Domain\Domain.csproj" />
+    </ItemGroup>
+    <ItemGroup>
+      <Folder Include="Controllers\" />
     </ItemGroup>
 </Project>
