@@ -48,5 +48,14 @@
         </LayoutGroup>
       </Layout>
     </DashboardView>
+    <ListView Id="PermissionPolicyUser_Roles_ListView">
+      <Columns>
+        <ColumnInfo Id="Oid" Width="105" />
+        <ColumnInfo Id="PermissionPolicy" Width="105" />
+        <ColumnInfo Id="Name" Width="600" />
+        <ColumnInfo Id="IsAdministrative" Width="0" />
+        <ColumnInfo Id="CanEditModel" Width="0" />
+      </Columns>
+    </ListView>
   </Views>
 </Application>

@@ -76,7 +76,7 @@ loadingBar.style.display = "block";
 
 var script = document.createElement("script");
 script.src = loaderUrl;
-script.onload = () => {p
+script.onload = () => {
     createUnityInstance(canvas, config, (progress) => {
         progressBarFull.style.width = 100 * progress + "%";
     }).then((instance) => {

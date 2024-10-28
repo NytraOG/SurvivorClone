@@ -33,8 +33,6 @@ public class CoOrgaSurvivorsGameAdapter : IComponentAdapter, IComplexControl
     }
 
     public object GetValue() => null;
-
     public void SetValue(object value) { }
-
     public event EventHandler ValueChanged;
 }
